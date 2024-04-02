@@ -2,9 +2,6 @@ box::use(
     jsonlite[...],
     here[...],
     dplyr[...],
-    tidyr[...],
-    tidytext[...],
-    stringr[...],
     lubridate[...]
 )
 
@@ -27,4 +24,6 @@ needed_df <- khana_df |>
         grepl("data", messages.text, ignore.case = TRUE)
     )
 
-needed_df  |> dplyr::group_by(year)  |> dplyr::count(sort = TRUE)
+needed_df |>
+    dplyr::group_by(year) |>
+    dplyr::count(sort = TRUE)
